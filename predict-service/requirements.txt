@@ -1,5 +1,8 @@
-flask
+Flask
 numpy
-pandas
+tensorflow
+opencv-python
+Pillow
 scikit-learn
-cloudpickle
+gunicorn        
+cloudpickle    
