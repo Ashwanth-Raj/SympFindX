@@ -1,0 +1,25 @@
+# Node.js
+**/node_modules/
+**/package-lock.json
+**/.env
+
+# Python (ML folder)
+**/__pycache__/
+**/*.pyc
+**/.ipynb_checkpoints/
+ml/.env
+
+# Frontend (React)
+frontend/build/
+frontend/.env
+
+# Logs
+**/logs/
+*.log
+
+# VSCode
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db

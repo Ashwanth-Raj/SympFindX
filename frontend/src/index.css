@@ -1,0 +1,251 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Import Google Fonts - Roboto Slab */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Root CSS Variables */
+:root {
+  /* Navy Blue Theme Colors */
+  --color-medical-50: #f8fafc;
+  --color-medical-100: #f1f5f9;
+  --color-medical-200: #e2e8f0;
+  --color-medical-300: #cbd5e1;
+  --color-medical-400: #94a3b8;
+  --color-medical-500: #1e3a8a;
+  --color-medical-600: #1e40af;
+  --color-medical-700: #1d4ed8;
+  --color-medical-800: #1e3a8a;
+  --color-medical-900: #172554;
+  
+  /* Primary Colors - Navy Blue Theme */
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-200: #bfdbfe;
+  --color-primary-300: #93c5fd;
+  --color-primary-400: #60a5fa;
+  --color-primary-500: #1e40af;
+  --color-primary-600: #1d4ed8;
+  --color-primary-700: #1e3a8a;
+  --color-primary-800: #172554;
+  --color-primary-900: #0f172a;
+  
+  /* System Colors */
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #3b82f6;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+}
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  line-height: 1.6;
+}
+
+body {
+  margin: 0;
+  background-color: #f8fafc;
+  color: #1e3a8a;
+  font-size: 16px;
+  line-height: 1.6;
+  font-family: 'Roboto Slab', serif;
+}
+
+/* Focus Styles */
+:focus {
+  outline: none;
+}
+
+.focus-visible:focus {
+  outline: 2px solid var(--color-medical-600);
+  outline-offset: 2px;
+}
+
+/* Selection Styles */
+::selection {
+  background-color: #dbeafe;
+  color: #1e3a8a;
+}
+
+::-moz-selection {
+  background-color: #dbeafe;
+  color: #1e3a8a;
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+::-webkit-scrollbar-corner {
+  background: #f1f5f9;
+}
+
+/* Firefox scrollbar */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 #f1f5f9;
+}
+
+/* Code and Pre Styles */
+code {
+  font-family: 'SF Mono', Monaco, Inconsolata, 'Roboto Mono', 'Fira Code', 'Droid Sans Mono', source-code-pro, monospace;
+  background-color: #f3f4f6;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: 0.875em;
+}
+
+pre {
+  font-family: 'SF Mono', Monaco, Inconsolata, 'Roboto Mono', 'Fira Code', 'Droid Sans Mono', source-code-pro, monospace;
+  background-color: #1f2937;
+  color: #f9fafb;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* Form Element Styles */
+input, textarea, select {
+  font-family: inherit;
+}
+
+/* Image Styles */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Button Reset */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Link Styles */
+a {
+  color: var(--color-medical-600);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-medical-700);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--color-medical-600);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* List Styles */
+ul, ol {
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.25rem;
+}
+
+/* Heading Styles */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.3;
+  color: #172554;
+  margin-bottom: 0.5rem;
+  font-family: 'Roboto Slab', serif;
+}
+
+h1 { font-size: 2.25rem; }
+h2 { font-size: 1.875rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.125rem; }
+h6 { font-size: 1rem; }
+
+/* Paragraph Styles */
+p {
+  margin-bottom: 1rem;
+  color: #475569;
+}
+
+/* Utility Classes */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Responsive Design Utilities */
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+  
+  h1 { font-size: 1.875rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
+}
