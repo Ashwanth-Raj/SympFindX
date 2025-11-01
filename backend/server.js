@@ -72,35 +72,35 @@ app.use('/api/prediction', predictionLimiter);
 
 // 6) Health checks (also ping Python microservice)
 app.get('/health', async (req, res) => {
-try {
-const predictUrl = process.env.PREDICT_SERVICE_URL || 'http://127.0.0.1:7000/api/predict';
-const base = new URL(predictUrl);
-const healthUrl = `${base.origin}`/api/health;
+  try {
+    const predictUrl = process.env.PREDICT_SERVICE_URL || 'http://127.0.0.1:7000/api/predict';
+    const base = new URL(predictUrl);
+    const healthUrl = `${base.origin}/api/health`;
 
-let aiServiceStatus = 'unhealthy';
-try {
-  await axios.get(healthUrl, { timeout: 2000 });
-  aiServiceStatus = 'healthy';
-} catch (error) {
-  console.warn(`⚠️ AI service health check failed: ${error.message}`.yellow);
-  aiServiceStatus = 'unhealthy';
-}
+    let aiServiceStatus = 'unhealthy';
+    try {
+      await axios.get(healthUrl, { timeout: 2000 });
+      aiServiceStatus = 'healthy';
+    } catch (error) {
+      console.warn(`⚠️ AI service health check failed: ${error.message}`.yellow);
+      aiServiceStatus = 'unhealthy';
+    }
 
-res.status(200).json({
-  status: 'healthy',
-  timestamp: new Date().toISOString(),
-  environment: process.env.NODE_ENV,
-  database: mongoose.connection.readyState === 1 ? 'connected' : 'disconnected',
-  ai_service: aiServiceStatus,
-  allowed_origin: allowedOrigin
-});
-} catch (error) {
-res.status(503).json({
-status: 'unhealthy',
-error: error.message,
-timestamp: new Date().toISOString(),
-});
-}
+    res.status(200).json({
+      status: 'healthy',
+      timestamp: new Date().toISOString(),
+      environment: process.env.NODE_ENV,
+      database: mongoose.connection.readyState === 1 ? 'connected' : 'disconnected',
+      ai_service: aiServiceStatus,
+      allowed_origin: allowedOrigin,
+    });
+  } catch (error) {
+    res.status(503).json({
+      status: 'unhealthy',
+      error: error.message,
+      timestamp: new Date().toISOString(),
+    });
+  }
 });
 
 // 7) Routes
