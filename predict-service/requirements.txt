@@ -1,9 +1,7 @@
 Flask
 gunicorn
-tensorflow-cpu
+tensorflow-cpu==2.20.0
 numpy
 pillow
 opencv-python
-scikit-learn
-pandas
-joblib
+scikit-learn==1.6.1   # optional; for exact compatibility with your pkl
