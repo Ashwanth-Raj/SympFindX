@@ -58,7 +58,7 @@ export const predictionAPI = {
   analyzeSymptoms: (symptomsData) => api.post('/prediction/symptoms', symptomsData),
   getPrediction: (predictionId) => api.get(`/prediction/${predictionId}`),
   getUserPredictions: () => api.get('/prediction/history'),
-  combinedAnalysis: (data) => api.post('/prediction/analyze', data),
+  combinedAnalysis: (data) => api.post('/predict', data),
 };
 
 export const specialistAPI = {
